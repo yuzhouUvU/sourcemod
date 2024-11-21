@@ -82,7 +82,7 @@ namespace SourceMod
 		 * @return		String containing the player's auth string.
 		 *				May be NULL if unavailable.
 		 */
-		virtual const char *GetAuthString(bool validated = true) =0;
+		virtual const char *GetAuthString(bool validated = false) =0;
 
 		/**
 		 * @brief Returns the player's edict_t structure.
@@ -247,7 +247,7 @@ namespace SourceMod
 		 * 
 		 * @return			Steam account ID or 0 if not available.
 		 */
-		virtual unsigned int GetSteamAccountID(bool validated = true) =0;
+		virtual unsigned int GetSteamAccountID(bool validated = false) =0;
 
 		/**
 		 * @brief Returns the client's edict/entity index.
@@ -275,7 +275,7 @@ namespace SourceMod
 		 * 
 		 * @return			Steam Id or 0 if not available.
 		 */
-		virtual uint64_t GetSteamId64(bool validated = true) =0;
+		virtual uint64_t GetSteamId64(bool validated = false) =0;
 		
 		/**
 		 * @brief Returns the client's Steam ID rendered in Steam2 format.
@@ -284,7 +284,7 @@ namespace SourceMod
 		 * 
 		 * @return			Steam2 Id on success or NULL if not available.
 		 */
-		virtual const char *GetSteam2Id(bool validated = true) =0;
+		virtual const char *GetSteam2Id(bool validated = false) =0;
 		
 		/**
 		 * @brief Returns the client's Steam ID rendered in Steam3 format.
@@ -293,7 +293,7 @@ namespace SourceMod
 		 * 
 		 * @return			Steam3 Id on success or NULL if not available.
 		 */
-		virtual const char *GetSteam3Id(bool validated = true) =0;
+		virtual const char *GetSteam3Id(bool validated = false) =0;
 
 		/**
 		 * @brief Returns the original language id the client had when

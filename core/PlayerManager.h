@@ -76,12 +76,12 @@ public:
 public:
 	const char *GetName();
 	const char *GetIPAddress();
-	const char *GetAuthString(bool validated = true);
-	unsigned int GetSteamAccountID(bool validated = true);
-	const CSteamID &GetSteamId(bool validated = true);
-	uint64_t GetSteamId64(bool validated = true) { return GetSteamId(validated).ConvertToUint64(); }
-	const char *GetSteam2Id(bool validated = true);
-	const char *GetSteam3Id(bool validated = true);
+	const char *GetAuthString(bool validated = false);
+	unsigned int GetSteamAccountID(bool validated = false);
+	const CSteamID &GetSteamId(bool validated = false);
+	uint64_t GetSteamId64(bool validated = false) { return GetSteamId(validated).ConvertToUint64(); }
+	const char *GetSteam2Id(bool validated = false);
+	const char *GetSteam3Id(bool validated = false);
 	edict_t *GetEdict();
 	bool IsInGame();
 	bool WasCountedAsInGame();

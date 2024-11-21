@@ -369,7 +369,7 @@ static cell_t SteamIdToLocal(IPluginContext *pCtx, int index, AuthIdType authTyp
 	switch (authType)
 	{
 	case AuthIdType::Engine:
-		authstr = pPlayer->GetAuthString(validate);
+		authstr = pPlayer->GetAuthString(FALSE);
 		if (!authstr || authstr[0] == '\0')
 		{
 			return 0;
@@ -378,7 +378,7 @@ static cell_t SteamIdToLocal(IPluginContext *pCtx, int index, AuthIdType authTyp
 		pCtx->StringToLocal(local_addr, bytes, authstr);
 		break;
 	case AuthIdType::Steam2:
-		authstr = pPlayer->GetSteam2Id(validate);
+		authstr = pPlayer->GetSteam2Id(FALSE);
 		if (!authstr || authstr[0] == '\0')
 		{
 			return 0;
@@ -387,7 +387,7 @@ static cell_t SteamIdToLocal(IPluginContext *pCtx, int index, AuthIdType authTyp
 		pCtx->StringToLocal(local_addr, bytes, authstr);
 		break;
 	case AuthIdType::Steam3:
-		authstr = pPlayer->GetSteam3Id(validate);
+		authstr = pPlayer->GetSteam3Id(FALSE);
 		if (!authstr || authstr[0] == '\0')
 		{
 			return 0;
@@ -403,7 +403,7 @@ static cell_t SteamIdToLocal(IPluginContext *pCtx, int index, AuthIdType authTyp
 				return 0;
 			}
 			
-			uint64_t steamId = pPlayer->GetSteamId64(validate);
+			uint64_t steamId = pPlayer->GetSteamId64(FALSE);
 			if (steamId == 0)
 			{
 				return 0;
